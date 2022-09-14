@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: _title,
       home: Scaffold(
         body:const MyStatefulWidget(),
@@ -28,19 +29,29 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
-
+    final ButtonStyle style = ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
+        children:
+        <Widget>[
+          const Icon(
+            Icons.home,
+            color: Colors.red,
+            size:60.0,
+            semanticLabel: '집',
+          ),
+          const Text(
+            '공부,혼자 하지 말고 열풍타에서 함께 하세요!',
+            style: TextStyle(fontWeight: FontWeight.bold),
+            
+            ),
           ElevatedButton(
             style: style,
-            onPressed: null,
+            onPressed: () {},
             child: const Text('버튼 1'),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 30,),
           ElevatedButton(
             style: style,
             onPressed: () {},
