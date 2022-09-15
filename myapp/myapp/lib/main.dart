@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/a.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,55 +10,62 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: Scaffold(
-        body:const MyStatefulWidget(),
-      ),
+      home: MyStatelessWidget()
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({super.key});
+
+class MyStatelessWidget extends StatefulWidget {
+  const MyStatelessWidget({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<MyStatelessWidget> createState() => _MyStatelessWidgetState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _MyStatelessWidgetState extends State<MyStatelessWidget> {
+void showDialog(){
+      AlertDialog(
+        title: Text("hello"),
+      );
+    }
+
+
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style = ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children:
-        <Widget>[
-          const Icon(
-            Icons.home,
-            color: Colors.red,
-            size:60.0,
-            semanticLabel: '집',
-          ),
-          const Text(
-            '공부,혼자 하지 말고 열풍타에서 함께 하세요!',
-            style: TextStyle(fontWeight: FontWeight.bold),
-            
+    
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children:[
+    
+            Image.asset("img/img.jpg"),
+          const Test(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 20),
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10)),
+      ),
+              onPressed: () {
+                showDialog();
+              },
+              child: const Text('새로 시작하기'),
             ),
-          ElevatedButton(
-            style: style,
-            onPressed: () {},
-            child: const Text('버튼 1'),
-          ),
-          const SizedBox(height: 30,),
-          ElevatedButton(
-            style: style,
-            onPressed: () {},
-            child: const Text('버튼 2'),
-          ),
-        ],
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 20),
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10)),
+      ),
+              onPressed: () {},
+              child: const Text('로그인'),
+            ),
+          ],
+        ),
       ),
     );
   }
