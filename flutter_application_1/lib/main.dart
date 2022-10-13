@@ -35,8 +35,8 @@ class DialogExample extends StatelessWidget {
         context: context,
         builder:(BuildContext context) => AlertDialog(
           insetPadding: const EdgeInsets.symmetric(
-            horizontal: 50.0,
-            vertical: 15.0,
+            horizontal: 57.6,
+            vertical: 35.7,
           ),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           content: Column(
@@ -47,6 +47,8 @@ class DialogExample extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50.0),
                     child: Image.asset('images/mata.jpg', 
                         scale: 8.8,
+                        width: 77,
+                        height: 77,
                       ),
                   ),
                   Container(
@@ -54,8 +56,9 @@ class DialogExample extends StatelessWidget {
                     child: const Text(
                       '바늘이',
                         style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20, 
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24, 
+                        fontFamily: 'Inter',
                       ),  
                     ),
                   ),
@@ -64,58 +67,65 @@ class DialogExample extends StatelessWidget {
               Container(
                 height: 1,
                 width: 450,
-                color: Colors.grey,
-                margin: const EdgeInsets.only(top: 20,bottom: 10),
+                color: const Color(0xffD9D9D9),
+                margin: const EdgeInsets.only(top: 24,bottom: 22),
               ), 
               Row(
                 children: const[
                   Text(
-                  '저는 2022년 입학했고\n리엑트를 잘 사용합니다~~.',
-                  style: TextStyle(
-                    fontSize: 25,
-                    letterSpacing: 2.0,
-                    fontWeight : FontWeight.bold,
-                    color: Colors.black,
+                    '저는 2022년 입학했고\n리엑트를 잘 사용합니다!.',
+                    style: TextStyle(
+                      fontSize: 23,
+                      letterSpacing: 1.0,
+                      fontWeight : FontWeight.w500,
+                      color: Color(0xff000000),
+                    ),
                   ),
-                ),
-              ],)
+                ],
+              )
             ],
           ),
           actions: [ 
-            ElevatedButton(style : ElevatedButton.styleFrom(
-              minimumSize: const Size(140, 60),
-              side: const BorderSide(
-                width: 1.0,
-                color: Colors.grey,
-              ),
-              textStyle:const TextStyle(
-                fontSize: 20,
-                color : Colors.black,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10)
-              ),primary: Colors.white,
-            ),
-              onPressed: () => Navigator.pop(context, 'cancel'), 
-            child: const Text(
-              '취소',
-              style: TextStyle(
-                  color:Colors.grey,
+            Container(
+              margin: const EdgeInsets.only(left: 25.0,bottom: 24.0,right: 64.0),
+              child: ElevatedButton(
+                style : ElevatedButton.styleFrom(
+                  minimumSize: const Size(170, 65),
+                  side: const BorderSide(
+                    width: 1.0,
+                    color: Color(0xff9B9B9B),
+                  ),
+                  textStyle:const TextStyle(
+                    fontSize: 20,
+                    color : Colors.black,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),primary: Colors.white,
                 ),
-              )
-            ),
-            ElevatedButton(
-              style : ElevatedButton.styleFrom(
-              minimumSize: const Size(140, 60),
-              side: const BorderSide(width: 1.0, color: Colors.grey,),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10)
-              ),primary: Colors.white,
-              textStyle:const TextStyle(
-                fontSize: 20,
-                color : Colors.black,
+                onPressed: () => Navigator.pop(context, 'cancel'), 
+              child: const Text(
+                '취소',
+                style: TextStyle(
+                    color:Color(0xff9B9B9B),
+                  ),
+                )
               ),
             ),
+            Container(
+              margin: const EdgeInsets.only(right:30.0,bottom: 20.0),
+              child: ElevatedButton(
+                style : ElevatedButton.styleFrom(
+                minimumSize: const Size(170, 65),
+                side: const BorderSide(width: 1.0, color: Colors.grey,),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)
+                ),primary: Colors.white,
+                textStyle:const TextStyle(
+                  fontSize: 20,
+                  color : Colors.black,
+                ),
+              ),
             onPressed: () => Navigator.pop(context, 'chatting'), 
               child: const Text(
                 '채팅하기',
@@ -123,7 +133,8 @@ class DialogExample extends StatelessWidget {
                   color: Colors.grey,
                 ),
               )
-            )
+            ),
+            ),
           ],
         )
       )
