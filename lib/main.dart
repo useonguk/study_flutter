@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'main2.dart';
+import 'package:myapp/main2.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -52,7 +53,7 @@ class _QuizStartState extends State<QuizStart> {
             ElevatedButton(
               onPressed: (){
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => const ChoseQize(),
+                  builder: (_) => const ChoseQuiz(),
                   )
                 );
               },
@@ -64,7 +65,7 @@ class _QuizStartState extends State<QuizStart> {
             SizedBox(height: MediaQuery.of(context).size.height * 0.07,),
             Container(
               width:MediaQuery.of(context).size.width * 0.8, 
-              height: MediaQuery.of(context).size.height * 0.45,
+              height: MediaQuery.of(context).size.height * 0.4,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
@@ -84,6 +85,23 @@ class _QuizStartState extends State<QuizStart> {
                   )
                 ],
               ),
+            ),
+            Stack(
+              children: [
+                Container(
+                  color: Colors.black,
+                  width: MediaQuery.of(context).size.width * 0.2,
+                  height: MediaQuery.of(context).size.height * 0.2,
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    color: Colors.yellow,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

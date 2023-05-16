@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'main3.dart';
 import 'main.dart';
 
-class ChoseQize extends StatelessWidget {
-  const ChoseQize({super.key});
+class ChoseQuiz extends StatelessWidget {
+  const ChoseQuiz({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class ChoseQize extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => QuizStart(),
+                    builder: (_) => const QuizStart(),
                     )
                   );
                 },
@@ -44,7 +45,7 @@ class ChoseQize extends StatelessWidget {
                     Text('단어의 알맞은 답을찾아 맞춤법를 늘리세요',
                       style: TextStyle(
                         color: Colors.black,
-                      )
+                      ),
                     ),
                   ],
                 ),
@@ -58,11 +59,16 @@ class ChoseQize extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.15,
               child: ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => QuizPage(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   side: const BorderSide(
-                    color: Colors.black,
+                    color:Color(0xFF92b4ec),
                   ),
                 ),
                 child: const Column(
@@ -80,7 +86,8 @@ class ChoseQize extends StatelessWidget {
                     Text('단어의 알맞은 답을찾아 어휘를 늘리세요',
                       style: TextStyle(
                         color: Colors.black,
-                      ),)
+                      ),
+                    ),
                   ],
                 ),
               ),
