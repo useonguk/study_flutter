@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'main3.dart';
 import 'main.dart';
+import 'main3.dart';
 
 class ChoseQuiz extends StatelessWidget {
   const ChoseQuiz({super.key});
@@ -19,8 +19,8 @@ class ChoseQuiz extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => const QuizStart(),
-                    )
+                    builder: (_) => const QuizPage(),
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -30,8 +30,8 @@ class ChoseQuiz extends StatelessWidget {
                     width: 1,
                   ),
                 ),
-                child: const Column(
-                  children: [
+                child: Column(
+                  children: const [
                     SizedBox(height: 9,),
                     Text('맞춤법 퀴즈',
                       style: TextStyle(
@@ -59,20 +59,15 @@ class ChoseQuiz extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.15,
               child: ElevatedButton(
-                onPressed: (){
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => QuizPage(),
-                    ),
-                  );
-                },
+                onPressed: (){},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   side: const BorderSide(
                     color:Color(0xFF92b4ec),
                   ),
                 ),
-                child: const Column(
-                  children: [
+                child: Column(
+                  children: const [
                     SizedBox(height: 9,),
                     Text('어휘 퀴즈',
                       style: TextStyle(
@@ -92,6 +87,15 @@ class ChoseQuiz extends StatelessWidget {
                 ),
               ),
             ), 
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const QuizStart(),
+                  )
+                );
+              },
+              child: const Text('히히'),
+            ),
           ],
         ),
       ),
